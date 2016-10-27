@@ -82,6 +82,13 @@ automatically signed up.</string>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnd-of-Prl">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="Ynu-5b-OgA"/>
+                                    <constraint firstAttribute="width" constant="60" id="q7T-Rz-tCD"/>
+                                </constraints>
+                                <state key="normal" image="fb"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -91,8 +98,10 @@ automatically signed up.</string>
                             <constraint firstItem="zLh-WU-1p9" firstAttribute="top" secondItem="4Gh-jF-jKI" secondAttribute="bottom" constant="45" id="94a-Eg-YpS"/>
                             <constraint firstItem="lTg-CC-FDU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B9c-bM-vim"/>
                             <constraint firstItem="zLh-WU-1p9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="62" id="Ekw-Pr-t0I"/>
+                            <constraint firstItem="dnd-of-Prl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R3E-bf-Cgi"/>
                             <constraint firstItem="4Gh-jF-jKI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SOY-ES-zfY"/>
                             <constraint firstAttribute="trailing" secondItem="GlC-bT-O78" secondAttribute="trailing" id="Sdl-B0-B6K"/>
+                            <constraint firstItem="dnd-of-Prl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="age-Vn-ZZh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zLh-WU-1p9" secondAttribute="trailing" constant="62" id="bvD-ol-Po3"/>
                             <constraint firstAttribute="trailing" secondItem="4Gh-jF-jKI" secondAttribute="trailing" id="hhU-uB-srK"/>
                             <constraint firstItem="GlC-bT-O78" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hj0-cO-fTg"/>
@@ -106,4 +115,7 @@ automatically signed up.</string>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fb" width="60" height="61"/>
+    </resources>
 </document>
