@@ -130,15 +130,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         })
     }
-    
-    
-    
-    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with:event)
