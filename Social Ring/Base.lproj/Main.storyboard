@@ -71,14 +71,25 @@ automatically signed up.</string>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="dismissKeyboardTap:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="yWF-jv-1bc"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="HjM-FY-Ozl"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H7Y-UD-fe9">
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="dismissKeyboardTap:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="MnF-qE-6jM"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Q58-ZU-cjs"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBl-k5-cnW">
                                         <state key="normal" title="Sign in"/>
+                                        <connections>
+                                            <action selector="signInFirebase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z6f-ar-jnC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -100,6 +111,10 @@ automatically signed up.</string>
                             <constraint firstItem="lTg-CC-FDU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="sTz-1j-759"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="Cj5-BO-2ZO" id="pfS-gC-Ugu"/>
+                        <outlet property="passwordField" destination="H7Y-UD-fe9" id="ez9-ww-z6n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
