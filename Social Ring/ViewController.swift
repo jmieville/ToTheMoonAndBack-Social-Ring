@@ -49,6 +49,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            self.performSegue(withIdentifier: "GoToFeed", sender: nil)
+        }
         
         
         
@@ -65,6 +68,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let credential = FIRFacebookAuthProvider.credential(withAccessToken: (AccessToken.current?.authenticationToken)!)
             print("Getting the \(credential)")
             self.firebaseAuth(credential)
+            
 
         } else {
             let loginButton = LoginButton(readPermissions: [ .publicProfile ])
@@ -88,10 +92,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
             } else {
                 print("\(user?.email) successfully logged in with firebase - \(error)")
                 self.completeSignIn(id: (user?.uid)!)
+                self.goToFeedIfLoggedIn()
 
             }
         }
         
+    }
+    
+    func goToFeedIfLoggedIn() {
+        self.performSegue(withIdentifier: "GoToFeed", sender: nil)
     }
     
     func completeSignIn(id: String) {
@@ -109,11 +118,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     } else {
                         print("Successfully created user")
                         self.completeSignIn(id: (user?.uid)!)
+                        self.goToFeedIfLoggedIn()
+
                         
                     }
                 })
             } else {
                 print("\(user?.email) successfully logged in with firebase - \(error)")
+                self.goToFeedIfLoggedIn()
 
             }
         })

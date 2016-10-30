@@ -132,12 +132,36 @@ automatically signed up.</string>
                     <view key="view" contentMode="scaleToFill" id="aUK-YJ-soE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1R-Y4-rd0">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sign Out from Firebase"/>
+                                <connections>
+                                    <action selector="signOutFireBase:" destination="Tta-E8-YD0" eventType="touchUpInside" id="Nmc-dD-EEa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HI5-3D-riH">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32266455888748169" green="0.81074720621109009" blue="0.98605602979660034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HI5-3D-riH" firstAttribute="top" secondItem="2Ys-nD-7yk" secondAttribute="bottom" constant="36" id="90j-r1-APw"/>
+                            <constraint firstItem="a1R-Y4-rd0" firstAttribute="leading" secondItem="aUK-YJ-soE" secondAttribute="leadingMargin" constant="31" id="T4l-kf-vI0"/>
+                            <constraint firstItem="a1R-Y4-rd0" firstAttribute="top" secondItem="2Ys-nD-7yk" secondAttribute="bottom" constant="165" id="ZoU-d4-Ri7"/>
+                            <constraint firstItem="HI5-3D-riH" firstAttribute="centerX" secondItem="a1R-Y4-rd0" secondAttribute="centerX" id="mU1-T6-s3z"/>
+                            <constraint firstItem="a1R-Y4-rd0" firstAttribute="centerX" secondItem="aUK-YJ-soE" secondAttribute="centerX" id="zTc-EC-cyJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userEmail" destination="HI5-3D-riH" id="Ino-BM-tc3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKq-jf-7cV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="139"/>
+            <point key="canvasLocation" x="885.60000000000002" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

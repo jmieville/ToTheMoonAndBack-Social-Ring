@@ -7,22 +7,48 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FacebookCore
+import FacebookLogin
+import SwiftKeychainWrapper
 
 class FeedVCViewController: UIViewController {
+    @IBOutlet weak var userEmail: UILabel!
 
+    @IBAction func signOutFireBase(_ sender: AnyObject) {
+        try! FIRAuth.auth()!.signOut()
+        self.dismiss(animated: true, completion: nil)
+        let removeSuccessful: Bool = KeychainWrapper.standard.remove(key: KEY_UID)
+
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let user =  FIRAuth.auth()?.currentUser {
+            userEmail.text = user.email
+        }
+        
+        if let accessToken = AccessToken.current {
+            let loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
+            loginButton.center = view.center
+            view.addSubview(loginButton)
+            try! FIRAuth.auth()!.signOut()
+            self.dismiss(animated: true, completion: nil)
 
-        // Do any additional setup after loading the view.
+            
+
+
+            
+            
+        }
+        
+        
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
+        /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
