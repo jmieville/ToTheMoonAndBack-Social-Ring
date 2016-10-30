@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1E6337C7B45C3D47B56398E5 /* Pods_Social_Ring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484C2E8624EA07CEB3800806 /* Pods_Social_Ring.framework */; };
 		8B37922F1DC4D74A00552254 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B37922E1DC4D74A00552254 /* GoogleService-Info.plist */; };
+		8B3792341DC5B37A00552254 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3792331DC5B37A00552254 /* Constants.swift */; };
+		8B3792361DC5B8E800552254 /* FeedVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3792351DC5B8E800552254 /* FeedVCViewController.swift */; };
 		8B8A69C71DBFD804005030EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A69C61DBFD804005030EC /* AppDelegate.swift */; };
 		8B8A69C91DBFD804005030EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A69C81DBFD804005030EC /* ViewController.swift */; };
 		8B8A69CC1DBFD804005030EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A69CA1DBFD804005030EC /* Main.storyboard */; };
@@ -19,6 +21,9 @@
 /* Begin PBXFileReference section */
 		484C2E8624EA07CEB3800806 /* Pods_Social_Ring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_Ring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B37922E1DC4D74A00552254 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8B3792321DC5A5AF00552254 /* Social Ring.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Social Ring.entitlements"; sourceTree = "<group>"; };
+		8B3792331DC5B37A00552254 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8B3792351DC5B8E800552254 /* FeedVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVCViewController.swift; sourceTree = "<group>"; };
 		8B8A69C31DBFD804005030EC /* Social Ring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Ring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8A69C61DBFD804005030EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B8A69C81DBFD804005030EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 		8B8A69C51DBFD804005030EC /* Social Ring */ = {
 			isa = PBXGroup;
 			children = (
+				8B3792321DC5A5AF00552254 /* Social Ring.entitlements */,
 				8B8A69C61DBFD804005030EC /* AppDelegate.swift */,
 				8B8A69C81DBFD804005030EC /* ViewController.swift */,
 				8B8A69CA1DBFD804005030EC /* Main.storyboard */,
@@ -87,6 +93,8 @@
 				8B8A69CF1DBFD804005030EC /* LaunchScreen.storyboard */,
 				8B37922E1DC4D74A00552254 /* GoogleService-Info.plist */,
 				8B8A69D21DBFD804005030EC /* Info.plist */,
+				8B3792331DC5B37A00552254 /* Constants.swift */,
+				8B3792351DC5B8E800552254 /* FeedVCViewController.swift */,
 			);
 			path = "Social Ring";
 			sourceTree = "<group>";
@@ -128,6 +136,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 8GL695U4E9;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -217,7 +230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B8A69C91DBFD804005030EC /* ViewController.swift in Sources */,
+				8B3792361DC5B8E800552254 /* FeedVCViewController.swift in Sources */,
 				8B8A69C71DBFD804005030EC /* AppDelegate.swift in Sources */,
+				8B3792341DC5B37A00552254 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +356,7 @@
 			baseConfigurationReference = CAF52FC766352DED9BBADA34 /* Pods-Social Ring.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Social Ring/Social Ring.entitlements";
 				DEVELOPMENT_TEAM = 8GL695U4E9;
 				INFOPLIST_FILE = "Social Ring/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -355,6 +371,7 @@
 			baseConfigurationReference = DA625E281FD49420C8AA1DD5 /* Pods-Social Ring.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Social Ring/Social Ring.entitlements";
 				DEVELOPMENT_TEAM = 8GL695U4E9;
 				INFOPLIST_FILE = "Social Ring/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

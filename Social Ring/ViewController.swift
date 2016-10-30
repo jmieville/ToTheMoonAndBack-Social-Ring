@@ -11,16 +11,20 @@ import FacebookCore
 import FacebookLogin
 import Firebase
 import FirebaseAuth
+import SwiftKeychainWrapper
 
 
 
 class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
+    
+    
     @IBAction func signInFirebase(_ sender: AnyObject) {
         if let email = emailField.text, let password = passwordField.text {
             let email = emailField.text
             let password = passwordField.text
             firebaseAuthEmailPass(email: email!, password: password!)
+            
 
         } else {
             print("Please put your email and password correctly.")
@@ -83,9 +87,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 print("\(user?.email) unsuccessfully log in with firebase - \(error)")
             } else {
                 print("\(user?.email) successfully logged in with firebase - \(error)")
+                self.completeSignIn(id: (user?.uid)!)
+
             }
         }
         
+    }
+    
+    func completeSignIn(id: String) {
+        let keyChainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("Data saved to key chain \(keyChainResult)")
     }
     
     func firebaseAuthEmailPass(email: String, password: String){
@@ -97,6 +108,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Failed to create user")
                     } else {
                         print("Successfully created user")
+                        self.completeSignIn(id: (user?.uid)!)
                         
                     }
                 })
