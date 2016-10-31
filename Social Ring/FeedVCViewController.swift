@@ -56,8 +56,9 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
     }
+    
     
     
 

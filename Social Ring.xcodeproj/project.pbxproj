@@ -12,6 +12,7 @@
 		8B3792341DC5B37A00552254 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3792331DC5B37A00552254 /* Constants.swift */; };
 		8B3792361DC5B8E800552254 /* FeedVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3792351DC5B8E800552254 /* FeedVCViewController.swift */; };
 		8B3792391DC67BD400552254 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3792381DC67BD400552254 /* PostCell.swift */; };
+		8B884F8B1DC7ACA800E1E3E4 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B884F8A1DC7ACA800E1E3E4 /* CircleView.swift */; };
 		8B8A69C71DBFD804005030EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A69C61DBFD804005030EC /* AppDelegate.swift */; };
 		8B8A69C91DBFD804005030EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A69C81DBFD804005030EC /* ViewController.swift */; };
 		8B8A69CC1DBFD804005030EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A69CA1DBFD804005030EC /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		8B3792331DC5B37A00552254 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8B3792351DC5B8E800552254 /* FeedVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVCViewController.swift; sourceTree = "<group>"; };
 		8B3792381DC67BD400552254 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		8B884F8A1DC7ACA800E1E3E4 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		8B8A69C31DBFD804005030EC /* Social Ring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Ring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8A69C61DBFD804005030EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B8A69C81DBFD804005030EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,15 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		8B884F8C1DC7ACB000E1E3E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B884F8A1DC7ACA800E1E3E4 /* CircleView.swift */,
+				8B3792381DC67BD400552254 /* PostCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		8B8A69BA1DBFD804005030EC = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +110,13 @@
 				8B3792321DC5A5AF00552254 /* Social Ring.entitlements */,
 				8B8A69C61DBFD804005030EC /* AppDelegate.swift */,
 				8B3792371DC5B9D500552254 /* Controller */,
+				8B884F8C1DC7ACB000E1E3E4 /* View */,
 				8B8A69CA1DBFD804005030EC /* Main.storyboard */,
 				8B8A69CD1DBFD804005030EC /* Assets.xcassets */,
 				8B8A69CF1DBFD804005030EC /* LaunchScreen.storyboard */,
 				8B37922E1DC4D74A00552254 /* GoogleService-Info.plist */,
 				8B8A69D21DBFD804005030EC /* Info.plist */,
 				8B3792331DC5B37A00552254 /* Constants.swift */,
-				8B3792381DC67BD400552254 /* PostCell.swift */,
 			);
 			path = "Social Ring";
 			sourceTree = "<group>";
@@ -240,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B884F8B1DC7ACA800E1E3E4 /* CircleView.swift in Sources */,
 				8B8A69C91DBFD804005030EC /* ViewController.swift in Sources */,
 				8B3792361DC5B8E800552254 /* FeedVCViewController.swift in Sources */,
 				8B8A69C71DBFD804005030EC /* AppDelegate.swift in Sources */,
