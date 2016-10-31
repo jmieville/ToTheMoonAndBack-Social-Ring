@@ -185,25 +185,19 @@ automatically signed up.</string>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lvd-tP-lfO">
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hipsterImage" translatesAutoresizingMaskIntoConstraints="NO" id="iKs-94-Fhy">
-                                                                            <frame key="frameInset" width="375" height="321"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16H-0f-gut">
-                                                                            <frame key="frameInset" minX="8" minY="8"/>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hipsterImage" translatesAutoresizingMaskIntoConstraints="NO" id="iKs-94-Fhy"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16H-0f-gut">
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="filled-heart" translatesAutoresizingMaskIntoConstraints="NO" id="kGv-iG-bcq">
-                                                                            <frame key="frameInset" minX="8" minY="9" width="26" height="21"/>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filled-heart" translatesAutoresizingMaskIntoConstraints="NO" id="kGv-iG-bcq">
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="21" id="FaR-zu-cqT"/>
                                                                                 <constraint firstAttribute="width" constant="26" id="rrT-N9-kNz"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="79" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMH-Wz-cQu">
-                                                                            <frame key="frameInset" minX="42" minY="9" width="20" height="21"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="79" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMH-Wz-cQu">
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="21" id="zh3-Fb-LDh"/>
                                                                             </constraints>
@@ -211,8 +205,7 @@ automatically signed up.</string>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a4j-g3-262">
-                                                                            <frame key="frameInset" minX="8" minY="197" width="359" height="115"/>
+                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a4j-g3-262">
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="115" id="Ex8-dA-vwk"/>
                                                                                 <constraint firstAttribute="width" constant="359" id="Xe6-nL-gbc"/>
@@ -226,7 +219,16 @@ automatically signed up.</string>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstItem="16H-0f-gut" firstAttribute="leading" secondItem="kGv-iG-bcq" secondAttribute="leading" id="1bG-Nu-DOZ"/>
+                                                                        <constraint firstItem="iKs-94-Fhy" firstAttribute="top" secondItem="Lvd-tP-lfO" secondAttribute="top" id="AzL-i2-Bg5"/>
                                                                         <constraint firstItem="kGv-iG-bcq" firstAttribute="top" secondItem="HMH-Wz-cQu" secondAttribute="top" id="DRi-b2-JNI"/>
+                                                                        <constraint firstItem="16H-0f-gut" firstAttribute="top" secondItem="Lvd-tP-lfO" secondAttribute="topMargin" id="ESI-7w-hzs"/>
+                                                                        <constraint firstItem="HMH-Wz-cQu" firstAttribute="leading" secondItem="kGv-iG-bcq" secondAttribute="trailing" constant="8" symbolic="YES" id="Fut-It-oi8"/>
+                                                                        <constraint firstItem="kGv-iG-bcq" firstAttribute="top" secondItem="Lvd-tP-lfO" secondAttribute="top" constant="9" id="MVA-O1-iw0"/>
+                                                                        <constraint firstItem="kGv-iG-bcq" firstAttribute="leading" secondItem="a4j-g3-262" secondAttribute="leading" id="e49-HF-E7Y"/>
+                                                                        <constraint firstItem="iKs-94-Fhy" firstAttribute="centerY" secondItem="Lvd-tP-lfO" secondAttribute="centerY" id="plW-bN-81y"/>
+                                                                        <constraint firstItem="iKs-94-Fhy" firstAttribute="leading" secondItem="Lvd-tP-lfO" secondAttribute="leading" id="qbL-xB-84E"/>
+                                                                        <constraint firstItem="iKs-94-Fhy" firstAttribute="centerX" secondItem="a4j-g3-262" secondAttribute="centerX" id="qy0-VD-dgR"/>
+                                                                        <constraint firstItem="16H-0f-gut" firstAttribute="leading" secondItem="Lvd-tP-lfO" secondAttribute="leadingMargin" id="rSg-9X-mUf"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="27Z-rl-gxo">
@@ -262,7 +264,7 @@ automatically signed up.</string>
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="Ahh-Vx-cdX" firstAttribute="leading" secondItem="5hm-l1-inS" secondAttribute="leading" id="2p0-lX-1tw"/>
                                                         <constraint firstAttribute="trailing" secondItem="Ahh-Vx-cdX" secondAttribute="trailing" id="PM8-Jt-6Tt"/>
@@ -290,40 +292,34 @@ automatically signed up.</string>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck5-Rj-3d7">
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TB8-mZ-dGT">
-                                        <frame key="frameInset" minX="4" minY="4" width="397" height="61"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TB8-mZ-dGT">
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rau-7E-2yr">
-                                                <frame key="frameInset" width="61" height="61"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rau-7E-2yr">
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="61" id="GZ1-Aq-1QD"/>
                                                     <constraint firstAttribute="width" constant="61" id="SUq-xQ-Mad"/>
                                                 </constraints>
                                                 <state key="normal" image="addimage"/>
                                             </button>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zmi-yU-34h">
-                                                <frame key="frameInset" minX="61" width="5" height="61"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zmi-yU-34h">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="5" id="2Xc-FE-rFV"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUB-sd-mGi">
-                                                <frame key="frameInset" minX="66" width="266" height="61"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUB-sd-mGi">
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VW0-I1-WP0">
-                                                <frame key="frameInset" minX="332" width="5" height="61"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW0-I1-WP0">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="5" id="g9F-bK-KPV"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paq-A1-FlV">
-                                                <frame key="frameInset" minX="337" width="60" height="61"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paq-A1-FlV">
                                                 <state key="normal" image="post"/>
                                             </button>
                                         </subviews>
@@ -334,6 +330,7 @@ automatically signed up.</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="TB8-mZ-dGT" secondAttribute="bottom" id="Msi-VL-EhF"/>
                                     <constraint firstAttribute="height" constant="65" id="izp-fv-sMm"/>
                                     <constraint firstAttribute="trailing" secondItem="TB8-mZ-dGT" secondAttribute="trailing" constant="4" id="vjd-09-rOg"/>
                                     <constraint firstItem="TB8-mZ-dGT" firstAttribute="leading" secondItem="ck5-Rj-3d7" secondAttribute="leading" constant="4" id="y93-PW-JZQ"/>
