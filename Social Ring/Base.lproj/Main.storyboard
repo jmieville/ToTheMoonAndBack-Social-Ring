@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tta-E8-YD0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -70,7 +70,7 @@ automatically signed up.</string>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cj5-BO-2ZO">
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <connections>
                                             <action selector="dismissKeyboardTap:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="yWF-jv-1bc"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="HjM-FY-Ozl"/>
@@ -165,7 +165,7 @@ automatically signed up.</string>
                                     <constraint firstItem="HI5-3D-riH" firstAttribute="centerY" secondItem="ePO-UC-OMA" secondAttribute="centerY" id="xfK-kE-acf"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="313" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXd-9k-AJG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="313" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXd-9k-AJG">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="u5E-c3-YqU"/>
@@ -175,7 +175,7 @@ automatically signed up.</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="375"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uOt-fZ-Blx" id="WCO-Rm-K9M">
-                                            <frame key="frameInset" width="375" height="374"/>
+                                            <frame key="frameInset" width="375" height="375"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hm-l1-inS">
@@ -238,7 +238,7 @@ automatically signed up.</string>
                                                                         <constraint firstItem="kGv-iG-bcq" firstAttribute="top" secondItem="Lvd-tP-lfO" secondAttribute="top" constant="8" id="zal-uX-ry2"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="27Z-rl-gxo">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="27Z-rl-gxo">
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfile" translatesAutoresizingMaskIntoConstraints="NO" id="UCw-vX-GFl">
                                                                             <constraints>
@@ -290,28 +290,44 @@ automatically signed up.</string>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck5-Rj-3d7">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rau-7E-2yr">
-                                        <frame key="frameInset" minY="2" width="67" height="61"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="addimage"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paq-A1-FlV">
-                                        <frame key="frameInset" minX="276" minY="2" width="67" height="59"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="post"/>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUB-sd-mGi">
-                                        <frame key="frameInset" minX="75" minY="8" width="193" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TB8-mZ-dGT">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rau-7E-2yr">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="57" id="Gtz-fS-Kn2"/>
+                                                    <constraint firstAttribute="width" constant="57" id="J61-Na-xKP"/>
+                                                </constraints>
+                                                <state key="normal" image="addimage"/>
+                                            </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUB-sd-mGi">
+                                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paq-A1-FlV">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="jDY-Oc-aK3"/>
+                                                    <constraint firstAttribute="height" constant="57" id="uEM-9E-DEW"/>
+                                                </constraints>
+                                                <state key="normal" image="post"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="NUB-sd-mGi" secondAttribute="trailing" constant="60" id="2kf-WG-j5E"/>
+                                            <constraint firstItem="NUB-sd-mGi" firstAttribute="leading" secondItem="TB8-mZ-dGT" secondAttribute="leading" constant="57" id="KcB-tf-DPs"/>
+                                            <constraint firstItem="NUB-sd-mGi" firstAttribute="top" secondItem="TB8-mZ-dGT" secondAttribute="top" id="NHO-hZ-XBD"/>
+                                            <constraint firstAttribute="bottom" secondItem="NUB-sd-mGi" secondAttribute="bottom" id="qxn-oJ-kti"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="TB8-mZ-dGT" secondAttribute="bottom" constant="4" id="OSA-4E-msh"/>
+                                    <constraint firstAttribute="trailing" secondItem="TB8-mZ-dGT" secondAttribute="trailing" constant="4" id="ZKf-eG-f9G"/>
+                                    <constraint firstItem="TB8-mZ-dGT" firstAttribute="top" secondItem="ck5-Rj-3d7" secondAttribute="top" constant="4" id="gml-8n-NyM"/>
                                     <constraint firstAttribute="height" constant="65" id="izp-fv-sMm"/>
+                                    <constraint firstItem="TB8-mZ-dGT" firstAttribute="leading" secondItem="ck5-Rj-3d7" secondAttribute="leading" constant="4" id="mKI-Ew-Mqb"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -329,6 +345,7 @@ automatically signed up.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="CXd-9k-AJG" id="0oH-sa-N7l"/>
                         <outlet property="userEmail" destination="HI5-3D-riH" id="Ino-BM-tc3"/>
                     </connections>
                 </viewController>

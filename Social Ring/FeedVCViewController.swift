@@ -13,7 +13,8 @@ import FacebookCore
 import FacebookLogin
 import SwiftKeychainWrapper
 
-class FeedVCViewController: UIViewController {
+class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userEmail: UILabel!
 
     @IBAction func signOutFireBase(_ sender: AnyObject) {
@@ -26,6 +27,9 @@ class FeedVCViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         if let user =  FIRAuth.auth()?.currentUser {
             userEmail.text = user.email
         }
@@ -36,17 +40,26 @@ class FeedVCViewController: UIViewController {
             view.addSubview(loginButton)
             try! FIRAuth.auth()!.signOut()
             self.dismiss(animated: true, completion: nil)
-
-            
-
-
-            
-            
         }
+        
         
         
 
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
 
         /*
     // MARK: - Navigation
