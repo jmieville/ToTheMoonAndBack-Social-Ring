@@ -21,7 +21,6 @@ class PostCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-
+    
 
 }
