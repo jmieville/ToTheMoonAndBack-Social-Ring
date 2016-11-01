@@ -30,6 +30,10 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         
+        DataService.ds.REF_POSTS.observe(.value) { (snapshot: FIRDataSnapshot) in
+            print(snapshot.value)
+        }
+        
         if let user =  FIRAuth.auth()?.currentUser {
             userEmail.text = user.email
         }

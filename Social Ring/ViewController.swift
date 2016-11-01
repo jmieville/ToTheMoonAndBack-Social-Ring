@@ -69,13 +69,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("Getting the \(credential)")
             self.firebaseAuth(credential)
             
+            
 
         } else {
             let loginButton = LoginButton(readPermissions: [ .publicProfile ])
             loginButton.center = view.center
             view.addSubview(loginButton)
             print("proceed to log-in")
-        }
+        } 
         
 //        func textFieldShouldReturn(textField: UITextField) -> Bool {
 //            self.emailField.resignFirstResponder()
@@ -91,8 +92,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 print("\(user?.email) unsuccessfully log in with firebase - \(error)")
             } else {
                 print("\(user?.email) successfully logged in with firebase - \(error)")
-                self.completeSignIn(id: (user?.uid)!)
-                self.goToFeedIfLoggedIn()
+                if let user = user {
+                    let userData =  ["provider": user.providerID]
+                    self.completeSignIn(id: user.uid, userData: userData)
+                    self.goToFeedIfLoggedIn()
+                }
 
             }
         }
@@ -103,7 +107,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.performSegue(withIdentifier: "GoToFeed", sender: nil)
     }
     
-    func completeSignIn(id: String) {
+    func completeSignIn(id: String, userData: Dictionary<String, String>) {
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         let keyChainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Data saved to key chain \(keyChainResult)")
     }
@@ -117,8 +122,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Failed to create user")
                     } else {
                         print("Successfully created user")
-                        self.completeSignIn(id: (user?.uid)!)
-                        self.goToFeedIfLoggedIn()
+                        if let user = user {
+                            let userData =  ["provider": user.providerID]
+                            self.completeSignIn(id: user.uid, userData: userData)
+                            self.goToFeedIfLoggedIn()
+                        }
+                        
 
                         
                     }
