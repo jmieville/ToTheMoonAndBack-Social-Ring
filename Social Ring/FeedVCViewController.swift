@@ -24,6 +24,9 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 
     }
+    
+    var posts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +35,20 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         DataService.ds.REF_POSTS.observe(.value) { (snapshot: FIRDataSnapshot) in
             print(snapshot.value)
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshot {
+                    print("\(snap)")
+                    if let postDict = snap.value as? Dictionary<String, AnyObject>{
+                        let key = snap.key
+                        let post = Post(postKey: key, postData: postDict as! Dictionary<String, AnyObject>)
+                        self.posts.append(post)
+                    }
+                }
+            }
+            self.tableView.reloadData()
+
         }
+
         
         if let user =  FIRAuth.auth()?.currentUser {
             userEmail.text = user.email
@@ -52,15 +68,22 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let post = posts[indexPath.row]
+        print("\(post.caption)")
+        
         return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+        
     }
     
     
