@@ -13,7 +13,7 @@ import FacebookCore
 import FacebookLogin
 import SwiftKeychainWrapper
 
-class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userEmail: UILabel!
 
@@ -26,12 +26,21 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     var posts = [Post]()
+    var imagePicker: UIImagePickerController!
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        imagePicker.delegate = self
+        
         
         DataService.ds.REF_POSTS.observe(.value) { (snapshot: FIRDataSnapshot) in
             print(snapshot.value)
@@ -48,6 +57,8 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView.reloadData()
 
         }
+        
+
 
         
         if let user =  FIRAuth.auth()?.currentUser {
@@ -67,6 +78,25 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     }
     
+
+    @IBOutlet weak var imageAdd: UIImageView!
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            imageAdd.image = image
+        } else {
+            print("A valid image wasn't selected")
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+
+    }
+    
+    @IBAction func addImageTapped(_ sender: AnyObject) {
+
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
@@ -83,8 +113,25 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        print("\(post.caption)")
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell{
-            cell.configureCell(post: post)
-            return cell
+            //var image: UIImage!
+            if let image = FeedVCViewController.imageCache.object(forKey: post.imageURL as NSString) {
+                
+
+                
+                    cell.configureCell(post: post, image: image)
+                    print("loaded from cache")
+                
+                    return cell
+                } else {
+                    cell.configureCell(post: post, image: nil)
+                    print("loaded from another cache")
+                
+                    return cell
+            }
+           
+            
+            //cell.configureCell(post: post, image: image)
+            //return cell
         } else {
             return PostCell()
         }
