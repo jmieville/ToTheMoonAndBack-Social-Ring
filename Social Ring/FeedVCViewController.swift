@@ -22,9 +22,34 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func postBtnTapped(_ sender: Any) {
         
         guard let caption = captionField.text, caption != "" else {
+            print("Caption must be entered")
             return
         }
         
+        guard let image = imageAdd.image, imageSelected == true  else {
+            print("An image must be selected")
+            return
+        }
+        
+        if let imageData = UIImageJPEGRepresentation(image, 0.2){
+            
+            let imageuid = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGES.child(imageuid).put(imageData, metadata: metadata, completion: { (metadata, error) in
+                if error != nil {
+                    print("Unable to upload image to Firebase Storage")
+                } else {
+                    print("Succesfully uploaded image to Firebase Storage")
+                    if let downloadURL = metadata?.downloadURL()?.absoluteString {
+                        let downloadURL = metadata?.downloadURL()?.absoluteString
+                    } else {
+                        print("Cannot get downloadURL from metadata")
+                    }
+                }
+            })
+        }
         
     }
     
@@ -41,7 +66,7 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
-    
+    var imageSelected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +122,7 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageAdd.image = image
+            imageSelected = true
         } else {
             print("A valid image wasn't selected")
         }
