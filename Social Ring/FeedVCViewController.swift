@@ -16,7 +16,20 @@ import SwiftKeychainWrapper
 class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userEmail: UILabel!
+    
+    @IBOutlet weak var captionField: UITextField!
 
+    @IBAction func postBtnTapped(_ sender: Any) {
+        
+        guard let caption = captionField.text, caption != "" else {
+            return
+        }
+        
+        
+    }
+    
+    
+    
     @IBAction func signOutFireBase(_ sender: AnyObject) {
         try! FIRAuth.auth()!.signOut()
         self.dismiss(animated: true, completion: nil)
@@ -136,6 +149,7 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return PostCell()
         }
     }
+    
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
