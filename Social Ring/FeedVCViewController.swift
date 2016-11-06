@@ -19,12 +19,14 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var captionField: UITextField!
 
+
     @IBAction func postBtnTapped(_ sender: Any) {
         
         guard let caption = captionField.text, caption != "" else {
             print("Caption must be entered")
             return
         }
+    
         
         guard let image = imageAdd.image, imageSelected == true  else {
             print("An image must be selected")
@@ -44,6 +46,7 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     print("Succesfully uploaded image to Firebase Storage")
                     if let downloadURL = metadata?.downloadURL()?.absoluteString {
                         let downloadURL = metadata?.downloadURL()?.absoluteString
+                        self.postToFirebase(imageURL: downloadURL!)
                     } else {
                         print("Cannot get downloadURL from metadata")
                     }
@@ -51,6 +54,22 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
             })
         }
         
+    }
+    
+    func postToFirebase(imageURL: String) {
+        let post: Dictionary<String, Any> = [
+            "caption": captionField.text,
+            "imageURL": imageURL,
+            "likes": 0
+        ]
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        imageAdd.image = UIImage(named: "addimage")
+        
+        tableView.reloadData()
     }
     
     
@@ -81,6 +100,9 @@ class FeedVCViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         DataService.ds.REF_POSTS.observe(.value) { (snapshot: FIRDataSnapshot) in
+            
+            self.posts = []
+            
             print(snapshot.value)
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
