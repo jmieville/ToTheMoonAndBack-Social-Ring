@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tta-E8-YD0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -198,16 +198,16 @@ automatically signed up.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hm-l1-inS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="374"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="373"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ahh-Vx-cdX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="374"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="373"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lvd-tP-lfO">
-                                                                    <rect key="frame" x="20" y="0.0" width="335" height="320"/>
+                                                                    <rect key="frame" x="20" y="0.0" width="335" height="319"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hipsterImage" translatesAutoresizingMaskIntoConstraints="NO" id="iKs-94-Fhy">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="319"/>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16H-0f-gut">
                                                                             <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
@@ -232,7 +232,7 @@ automatically signed up.</string>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a4j-g3-262">
-                                                                            <rect key="frame" x="8" y="197" width="359" height="115"/>
+                                                                            <rect key="frame" x="8" y="196" width="359" height="115"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="115" id="Ex8-dA-vwk"/>
                                                                                 <constraint firstAttribute="width" constant="359" id="Xe6-nL-gbc"/>
@@ -259,7 +259,7 @@ automatically signed up.</string>
                                                                     </constraints>
                                                                 </view>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="27Z-rl-gxo">
-                                                                    <rect key="frame" x="0.0" y="320" width="375" height="54"/>
+                                                                    <rect key="frame" x="0.0" y="319" width="375" height="54"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="UCw-vX-GFl" customClass="CircleView" customModule="Social_Ring" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="54" height="54"/>
@@ -284,6 +284,7 @@ automatically signed up.</string>
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="54" id="bVI-BJ-8LY"/>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="mKT-5P-f4h"/>
                                                                     </constraints>
                                                                 </stackView>
                                                             </subviews>
